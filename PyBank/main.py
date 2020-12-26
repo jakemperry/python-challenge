@@ -16,6 +16,9 @@ with open(filePath, 'r') as budgetFile:
     for row in csvReader:
         monthCount += 1
     
-    print(monthCount)
+    #Set a totalMonths variable after counting all of the months 
+    #(added for simplicity)
+    totalMonths = monthCount
+    print(totalMonths)
 
 
