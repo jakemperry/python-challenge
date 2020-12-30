@@ -9,7 +9,7 @@ with open(filePath, 'r') as electionData:
     header = next(csvReader)
     print(header)
 
-    #Create an empty set for candidates
+    #Create an empty set for candidates (based on example from class materials)
     allCandidates=set()
     totalVotes = 0
 
