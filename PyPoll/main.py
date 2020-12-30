@@ -18,14 +18,14 @@ with open(filePath, 'r') as electionData:
         allCandidates.add(row[2])
         totalVotes += 1
     print(allCandidates)
-#Create a dictionary with the candidates set as the keys, initial values = 0
+#Create a dictionary with the candidates set as the keys, initial values = 0 (based on example from class materials)
 voteCount={}.fromkeys(allCandidates,0)
 
 #Open the csv file again
 with open(filePath, 'r') as electionData:
     csvReader = csv.reader(electionData, delimiter=',')
     header = next(csvReader)
-    #Go through each row, add to the count for every candidate
+    #Go through each row, add to the count for every candidate (based on example from class materials)
     for row in csvReader:
         voteCount[row[2]] += 1
 print(voteCount)
