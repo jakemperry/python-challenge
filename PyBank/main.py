@@ -51,7 +51,11 @@ with open(filePath, 'r') as budgetFile:
     print(f"Greatest Increase in Profits: {maxChangeMonth} (${maxChange})")
     print(f"Greatest Decrease in Profits: {minChangeMonth} (${minChange})")
 
-
+resultsPath = os.path.join("Analysis","FinancialAnalysis.csv")
+with open(resultsPath, 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter=',')
+    csvwriter.writerow(['TotalMonths','Total','AverageChange','GreatestIncreaseMonth','GreatestIncreaseInProfits','GreatestDecreaseMonth','GreatestDecreaseInProfits'])
+    csvwriter.writerow([totalMonths,netTotal,avgChange,maxChangeMonth,maxChange,minChangeMonth, minChange])
     
 
 
