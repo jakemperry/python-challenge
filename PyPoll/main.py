@@ -7,7 +7,6 @@ filePath = os.path.join("Resources","election_data.csv")
 with open(filePath, 'r') as electionData:
     csvReader = csv.reader(electionData, delimiter=',')
     header = next(csvReader)
-    print(header)
 
     #Create an empty set for candidates (based on example from class materials)
     allCandidates=set()
@@ -19,7 +18,7 @@ with open(filePath, 'r') as electionData:
     for row in csvReader:
         allCandidates.add(row[2])
         totalVotes += 1
-    print(allCandidates)
+
 #Create a dictionary with the candidates set as the keys, initial values = 0 (based on example from class materials)
 voteCount={}.fromkeys(allCandidates,0)
 
@@ -36,7 +35,7 @@ with open(filePath, 'r') as electionData:
             mostVotes = count
             winnerName = candidate
     
-#Print Results
+#Print Results to the Terminal
 print(f"Election Results")
 print(f"--------------------------")
 print(f"Total Votes: {totalVotes}")
@@ -46,3 +45,18 @@ for candidate, count in voteCount.items():
 print(f"--------------------------")
 print(f"Winner: {winnerName}")
 print(f"--------------------------")
+
+#Write results into a text file
+resultsPath = os.path.join("Analysis","election_results.txt")
+if not os.path.exists("Analysis"):
+    os.makedirs("Analysis")
+with open(resultsPath, 'w') as resultsFile:
+    resultsFile.writelines([f"Election Results",
+                            f"\n--------------------------",
+                            f"\nTotal Votes: {totalVotes}",
+                            f"\n--------------------------"])
+    for candidate,count in voteCount.items():
+        resultsFile.write(f"\n{candidate}: {round((count/totalVotes)*100,3)}% ({count})")
+    resultsFile.writelines([f"\n--------------------------",
+                            f"\nWinner: {winnerName}",
+                            f"\n--------------------------"])
