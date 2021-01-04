@@ -12,6 +12,8 @@ with open(filePath, 'r') as electionData:
     #Create an empty set for candidates (based on example from class materials)
     allCandidates=set()
     totalVotes = 0
+    winnerName = "N/A"
+    mostVotes = 0
 
     #read all rows and fill out set of unique candidates
     for row in csvReader:
@@ -28,4 +30,19 @@ with open(filePath, 'r') as electionData:
     #Go through each row, add to the count for every candidate (based on example from class materials)
     for row in csvReader:
         voteCount[row[2]] += 1
-print(voteCount)
+    #Find the candidate with the most votes after counting all votes for all candidates    
+    for candidate, count in voteCount.items():
+        if count > mostVotes:
+            mostVotes = count
+            winnerName = candidate
+    
+#Print Results
+print(f"Election Results")
+print(f"--------------------------")
+print(f"Total Votes: {totalVotes}")
+print(f"--------------------------")
+for candidate, count in voteCount.items():
+    print(f"{candidate}: {round((count/totalVotes)*100,3)}% ({count})")
+print(f"--------------------------")
+print(f"Winner: {winnerName}")
+print(f"--------------------------")
