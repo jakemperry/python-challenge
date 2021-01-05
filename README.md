@@ -18,7 +18,7 @@ This scriplt takes a .csv file of election data (voter IDs, county, and selected
     <li>Total votes counted (rows)</li>
     <li>All selected candidates included in the election data, with the percentage of the vote each candidate received and the total number of votes each candidate received.  
     <ul>
-        <<li>This uses a dictionary method to create a set which includes all of the candidates (you do not need to specify the number of candidates or unique candidate names up front)</li>
+        <li>This uses a dictionary method to create a set which includes all of the candidates (you do not need to specify the number of candidates or unique candidate names up front)</li>
     </ul></li>
     <li>The winning candidate, based on the data available in the election data file</li>
 </ul>
