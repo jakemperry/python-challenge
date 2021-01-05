@@ -13,7 +13,6 @@ This script takes a .csv file of finanical data and creates a summary within the
 The script also creates a .csv file with the summary and saves it in the "Analysis" folder under the PyBank activity, with summary items as the header row and the summary item values in a single row.
 
 <h2>PyPoll</h2>
-
 This scriplt takes a .csv file of election data (voter IDs, county, and selected candidate) and creates a summary within the terminal:
 <ul>
     <li>Total votes counted</li>
