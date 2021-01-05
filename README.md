@@ -19,4 +19,4 @@ This scriplt takes a .csv file of election data (voter IDs, county, and selected
     <li>All selected candidates included in the election data, including the percentage of the vote each candidate received and the total number of votes each candidate received</li>
     <li>The winning candidate, based on the data available in the election data file</li>
 </ul>
-The script also creates a .txt file which contains a copy of the summary as it is presented in the terminal
+The script also creates a .txt file which contains a copy of the summary as it is presented in the terminal, this file is saved in the "Analyis" folder (if no such folder already exists, the script will create an "Analysis" folder)
